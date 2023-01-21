@@ -129,7 +129,7 @@ function removeCompleted() {
 
 </template>
 
-<!-- <style scoped>
+<style scoped>
 html,
 body {
   margin: 0;
@@ -467,7 +467,4 @@ body {
 .clear-completed:hover {
   text-decoration: underline;
 }
-</style> -->
-<style>
-@import "https://unpkg.com/todomvc-app-css@2.4.1/index.css";
 </style>
