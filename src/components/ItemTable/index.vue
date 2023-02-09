@@ -9,7 +9,6 @@ const deleteRow = (index) => {
     tData.value.splice(index, 1)
 }
 
-const testGit = ref('')
 </script>
 
 <template>
