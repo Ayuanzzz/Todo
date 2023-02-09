@@ -3,6 +3,23 @@ import { ref } from 'vue'
 import { Check, Delete } from '@element-plus/icons-vue'
 import ItemTable from "./components/ItemTable/index.vue"
 
+const planData = ref([{
+  id: 1,
+  name: '防护等级发货的机房环境'
+},
+{
+  id: 2,
+  name: '饭店客房几点几分'
+}])
+
+const doingData = ref([{
+  id: 1,
+  name: '反对和发动机负荷'
+},
+{
+  id: 2,
+  name: '反对恢复东方航空'
+}])
 </script>
 
 <template>
@@ -10,13 +27,13 @@ import ItemTable from "./components/ItemTable/index.vue"
     <el-col :span="8">
       <div class="grid-content">
         <h1>未完成</h1>
-        <ItemTable />
+        <ItemTable :tableData="planData" />
       </div>
     </el-col>
     <el-col :span="8">
       <div class="grid-content">
         <h1>进行中</h1>
-        <ItemTable />
+        <ItemTable :tableData="doingData" />
       </div>
     </el-col>
     <el-col :span="8">
