@@ -20,6 +20,40 @@ const doingData = ref([{
   id: 2,
   name: '反对恢复东方航空'
 }])
+
+const doneData = ref([{
+  id: 1,
+  name: '大幅降低发货的肌肤'
+},
+{
+  id: 2,
+  name: '对方的疯狂的房价'
+}])
+
+// 删除数据
+const deletePlan = (index) => {
+  planData.value.splice(index, 1)
+}
+const deleteDoing = (index) => {
+  doingData.value.splice(index, 1)
+}
+const deleteDone = (index) => {
+  doneData.value.splice(index, 1)
+}
+
+//更改数据
+const changePlan = (index) => {
+  let tmpData = planData.value[index]
+  planData.value.splice(index, 1)
+  doingData.value.push(tmpData)
+}
+const changeDoing = (index) => {
+  let tmpData = doingData.value[index]
+  doingData.value.splice(index, 1)
+  doneData.value.push(tmpData)
+}
+
+
 </script>
 
 <template>
@@ -27,19 +61,46 @@ const doingData = ref([{
     <el-col :span="8">
       <div class="grid-content">
         <h1>未完成</h1>
-        <ItemTable :tableData="planData" />
+        <el-table :data="planData" style="width: 100%">
+          <el-table-column label="名称" prop="name" style="width: 90%">
+          </el-table-column>
+          <el-table-column fixed="right" label="编辑" width="100">
+            <template #default="scope">
+              <el-button type="success" :icon="Check" circle @click.prevent="changePlan(scope.$index)" />
+              <el-button type="danger" :icon="Delete" circle @click.prevent="deletePlan(scope.$index)" />
+            </template>
+          </el-table-column>
+        </el-table>
       </div>
     </el-col>
     <el-col :span="8">
       <div class="grid-content">
         <h1>进行中</h1>
-        <ItemTable :tableData="doingData" />
+        <el-table :data="doingData" style="width: 100%">
+          <el-table-column label="名称" prop="name" style="width: 90%">
+          </el-table-column>
+          <el-table-column fixed="right" label="编辑" width="100">
+            <template #default="scope">
+              <el-button type="success" :icon="Check" circle @click.prevent="changeDoing(scope.$index)" />
+              <el-button type="danger" :icon="Delete" circle @click.prevent="deleteDoing(scope.$index)" />
+            </template>
+          </el-table-column>
+        </el-table>
       </div>
     </el-col>
     <el-col :span="8">
       <div class="grid-content">
         <h1>已完成</h1>
-        <ItemTable />
+        <el-table :data="doneData" style="width: 100%">
+          <el-table-column label="名称" prop="name" style="width: 90%">
+          </el-table-column>
+          <el-table-column fixed="right" label="编辑" width="100">
+            <template #default="scope">
+              <el-button type="success" :icon="Check" circle @click.prevent="deleteDone(scope.$index)" />
+              <el-button type="danger" :icon="Delete" circle @click.prevent="deleteDone(scope.$index)" />
+            </template>
+          </el-table-column>
+        </el-table>
       </div>
     </el-col>
   </el-row>
