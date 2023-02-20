@@ -4,16 +4,16 @@ import Home from '@/views/Home/index.vue'
 const router = createRouter({
     history: createWebHistory(),
     routes: [{
-        path: '/',
-        redirect: '/home'
+        path: '/Todo',
+        redirect: '/Todo/home'
     },
     {
-        path: '/home',
+        path: '/Todo/home',
         name: 'home',
         component: Home
     },
     {
-        path: '/itemtable',
+        path: '/Todo/itemtable',
         component: () => import('@/views/itemTable/index.vue'),
     }]
 })

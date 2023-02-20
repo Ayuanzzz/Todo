@@ -5,7 +5,11 @@ import 'element-plus/dist/index.css'
 
 import App from './App.vue'
 import router from './router'
-import './mock/'
+
+import { setupProdMockServer } from '../mockProdServer';
+if (process.env.NODE_ENV === 'production') {
+    setupProdMockServer();
+}
 
 const app = createApp(App)
 

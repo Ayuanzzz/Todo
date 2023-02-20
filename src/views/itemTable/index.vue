@@ -35,17 +35,18 @@ const changeDoing = (index) => {
 //获取数据
 function getData() {
     getPlanData().then(res => {
-        planData.value = res.data.data
+        planData.value = res.data.data.list
     })
     getDoingData().then(res => {
-        doingData.value = res.data.data
+        doingData.value = res.data.data.list
     })
     getDoneData().then(res => {
-        doneData.value = res.data.data
+        doneData.value = res.data.data.list
     })
 }
 
 onMounted(() => {
+    console.log('fetch');
     getData()
 })
 

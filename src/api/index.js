@@ -10,8 +10,8 @@ axios.interceptors.request.use(config => {
 })
 
 axios.interceptors.response.use(response => {
-    const res = response.data
-    if (res.code !== 200) {
+    const res = response
+    if (res.data.code !== 200) {
         ElMessage({
             message: '获取数据失败',
             type: 'error',
@@ -27,10 +27,10 @@ function getPlanData() {
 }
 
 function getDoingData() {
-    return axios.get('/api/getdoingData')
+    return axios.get('/api/getDoingData')
 }
 function getDoneData() {
-    return axios.get('/api/getdoneData')
+    return axios.get('/api/getDoneData')
 }
 
 export {

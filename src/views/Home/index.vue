@@ -4,7 +4,7 @@ import { useRouter } from 'vue-router'
 const router = useRouter()
 
 function goItemTable() {
-    router.push('/itemtable')
+    router.push('/Todo/itemtable')
 }
 
 </script>
@@ -13,6 +13,4 @@ function goItemTable() {
     <el-button type="primary" @click.prevent="goItemTable">项目列表</el-button>
 </template>
 
-<style scoped>
-
-</style>
+<style scoped></style>
