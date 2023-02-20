@@ -1,34 +1,13 @@
 <script setup>
 import { ref, onMounted } from 'vue'
 import { Check, Delete } from '@element-plus/icons-vue'
-import axios from 'axios'
+import { getPlanData, getDoingData, getDoneData } from '@/api/index.js'
 
-const planData = ref([{
-    id: 1,
-    name: '防护等级发货的机房环境'
-},
-{
-    id: 2,
-    name: '饭店客房几点几分'
-}])
+const planData = ref([])
 
-const doingData = ref([{
-    id: 1,
-    name: '反对和发动机负荷'
-},
-{
-    id: 2,
-    name: '反对恢复东方航空'
-}])
+const doingData = ref([])
 
-const doneData = ref([{
-    id: 1,
-    name: '大幅降低发货的肌肤'
-},
-{
-    id: 2,
-    name: '对方的疯狂的房价'
-}])
+const doneData = ref([])
 
 // 删除数据
 const deletePlan = (index) => {
@@ -54,18 +33,21 @@ const changeDoing = (index) => {
 }
 
 //获取数据
-onMounted(() => {
-    //实际开发过程中建议对api进行封装 搭配async/await使用
-    axios
-        .get(`/api/getUsers`)
-        .then((res) => {
-            console.log("res  ----->  ", res.data.data);
-        })
-        .catch((err) => {
-            console.log(err);
-        });
+function getData() {
+    getPlanData().then(res => {
+        planData.value = res.data.data
+    })
+    getDoingData().then(res => {
+        doingData.value = res.data.data
+    })
+    getDoneData().then(res => {
+        doneData.value = res.data.data
+    })
+}
 
-});
+onMounted(() => {
+    getData()
+})
 
 </script>
 
