@@ -17,6 +17,8 @@ axios.interceptors.response.use(response => {
             type: 'error',
             duration: 3 * 1000
         })
+    } else {
+        return res
     }
 })
 
