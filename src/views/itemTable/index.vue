@@ -1,6 +1,7 @@
 <script setup>
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
 import { Check, Delete } from '@element-plus/icons-vue'
+import axios from 'axios'
 
 const planData = ref([{
     id: 1,
@@ -52,6 +53,19 @@ const changeDoing = (index) => {
     doneData.value.push(tmpData)
 }
 
+//获取数据
+onMounted(() => {
+    //实际开发过程中建议对api进行封装 搭配async/await使用
+    axios
+        .get(`/api/getUsers`)
+        .then((res) => {
+            console.log("res  ----->  ", res.data.data);
+        })
+        .catch((err) => {
+            console.log(err);
+        });
+
+});
 
 </script>
 

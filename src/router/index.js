@@ -4,7 +4,7 @@ import Home from '@/views/Home/index.vue'
 const router = createRouter({
     history: createWebHistory(),
     routes: [{
-        path: '//',
+        path: '/',
         redirect: '/home'
     },
     {
