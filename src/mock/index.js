@@ -17,7 +17,7 @@ function itemData(num) {
         arr.push(obj)
     }
     return {
-        code: 0,
+        code: 200,
         data: arr,
         total: num
     }

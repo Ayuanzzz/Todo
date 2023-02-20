@@ -35,6 +35,7 @@ const changeDoing = (index) => {
 //获取数据
 function getData() {
     getPlanData().then(res => {
+        console.log(res.data);
         planData.value = res.data.data
     })
     getDoingData().then(res => {
