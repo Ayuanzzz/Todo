@@ -22,5 +22,6 @@
     "sass": "^1.58.0",
     "vite": "^4.0.0",
     "vite-plugin-mock": "^2.9.6"
-  }
+  },
+  "homepage": "https://ayuanzzz.github.io/Todo/"
 }
