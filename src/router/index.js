@@ -15,6 +15,10 @@ const router = createRouter({
     {
         path: '/Todo/itemtable',
         component: () => import('@/views/itemTable/index.vue'),
+    },
+    {
+        path: '/Todo/setItem',
+        component: () => import('@/views/setItem/index.vue'),
     }]
 })
 
