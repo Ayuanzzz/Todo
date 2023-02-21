@@ -4,10 +4,10 @@ import { useRouter } from 'vue-router'
 const router = useRouter()
 
 function goItemTable() {
-    router.push('/Todo/itemtable')
+    router.push('/itemtable')
 }
 function goSetItem() {
-    router.push('/Todo/setItem')
+    router.push('/setItem')
 }
 
 </script>

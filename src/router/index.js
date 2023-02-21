@@ -2,22 +2,22 @@ import { createRouter, createWebHistory } from 'vue-router'
 import Home from '@/views/Home/index.vue'
 
 const router = createRouter({
-    history: createWebHistory(),
+    history: createWebHistory('/Todo/'),
     routes: [{
-        path: '/Todo',
-        redirect: '/Todo/home'
+        path: '/',
+        redirect: '/home'
     },
     {
-        path: '/Todo/home',
+        path: '/home',
         name: 'home',
         component: Home
     },
     {
-        path: '/Todo/itemtable',
+        path: '/itemtable',
         component: () => import('@/views/itemTable/index.vue'),
     },
     {
-        path: '/Todo/setItem',
+        path: '/setItem',
         component: () => import('@/views/setItem/index.vue'),
     }]
 })

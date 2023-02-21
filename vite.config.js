@@ -21,15 +21,18 @@ export default ({ command }) => {
         injectFile: resolve("src/main.js")
       }),
     ],
-    base: '/Todo/',
+    // github仓库名
+    base: process.env.NODE_ENV === "production" ? `/Todo/` : '/',
     resolve: {
       alias: {
         '@': fileURLToPath(new URL('./src', import.meta.url))
       }
     },
     build: {
-      chunkSizeWarningLimit: 1500
-    }
+      // 包大小限制
+      chunkSizeWarningLimit: 1500,
+      outDir: "dist",
+    },
   }
 }
 
