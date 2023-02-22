@@ -1,6 +1,5 @@
 <script setup>
 import { useRouter } from 'vue-router'
-import { watch } from 'vue'
 
 const router = useRouter()
 
@@ -10,13 +9,6 @@ function goItemTable() {
 function goSetItem() {
     router.push('/setItem')
 }
-
-// 监听,当路由发生变化的时候执行
-// watch(() => router.path, (newPath, oldPath) => { console.log(newPath) }, { immediate: true });
-// 监听当前路由变化
-// watch(() => router.currentRoute.value.path, (toPath) => {
-//     console.log(toPath);
-// }, { immediate: true, deep: true })
 
 </script>
 

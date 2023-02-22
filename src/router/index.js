@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from '@/views/Home/index.vue'
+// import ItemTable from '@/views/itemTable/index.vue'
 
 const router = createRouter({
     history: createWebHistory('/Todo/'),
@@ -14,7 +15,8 @@ const router = createRouter({
     },
     {
         path: '/itemtable',
-        component: () => import('../views/itemTable/index.vue'),
+        component: () => import('@/views/itemTable/index.vue'),
+        // component: ItemTable
     },
     {
         path: '/setItem',

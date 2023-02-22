@@ -104,7 +104,6 @@ onMounted(() => {
 
 <style lang="scss" scoped>
 .el-row {
-    // margin: 20px 5px 0 5px;
     height: 100vh;
 }
 
@@ -116,10 +115,6 @@ onMounted(() => {
 .el-col:last-child {
     border-right: 0;
 }
-
-// .editBtn {
-//   display: inline !impotant;
-// }
 </style>
 
 
