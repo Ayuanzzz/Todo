@@ -14,7 +14,7 @@ on:
 #   contents: read
 #   pages: write
 #   id-token: write
-permissions: read-all|write-all
+permissions: write-all
 
 # 允许一个并发的部署
 concurrency:
