@@ -1,27 +1,36 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import Home from '@/views/Home/index.vue'
-// import ItemTable from '@/views/itemTable/index.vue'
 
-const router = createRouter({
-    history: createWebHistory('/Todo/'),
-    routes: [{
+import Layout from '@/layout/index.vue'
+
+export const constantRoutes = [
+    {
         path: '/',
-        redirect: '/home'
+        // redirect:'/home'
+        redirect: '/setItem'
     },
     {
         path: '/home',
-        name: 'home',
-        component: Home
+        component: () => import('@/views/Home/index.vue'),
     },
     {
         path: '/itemtable',
         component: () => import('@/views/itemTable/index.vue'),
-        // component: ItemTable
     },
     {
         path: '/setItem',
-        component: () => import('@/views/setItem/index.vue'),
-    }]
+        component: Layout,
+        children: [
+            {
+                path: 'index',
+                component: () => import('@/views/setItem/index.vue'),
+            }
+        ]
+    }
+]
+
+const router = createRouter({
+    history: createWebHistory('/Todo/'),
+    routes: constantRoutes
 })
 
 // 全局路由守卫
