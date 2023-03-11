@@ -1,6 +1,9 @@
 <script setup>
-
 import { Edit } from '@element-plus/icons-vue'
+
+computed({
+
+})
 </script>
 
 <template>
@@ -14,14 +17,14 @@ import { Edit } from '@element-plus/icons-vue'
                 编辑
             </span>
         </div>
-        <div class="control">
-            <el-icon size="20px">
-                <Edit />
-                                            </el-icon>
-                                            <span class="ctlTxt">
-                                                编辑
-                                            </span>
-                                        </div> -->
+                <div class="control">
+                    <el-icon size="20px">
+                        <Edit />
+                                                    </el-icon>
+                                                    <span class="ctlTxt">
+                                                        编辑
+                                                    </span>
+                                                </div> -->
         <el-menu default-active="2" background-color="#304156" text-color="#bfcbd9" :unique-opened="false"
             active-text-color="#409EFF" :collapse-transition="false" mode="vertical">
             <el-menu-item index="1">
