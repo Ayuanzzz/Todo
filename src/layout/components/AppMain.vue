@@ -5,9 +5,7 @@
 <template>
     <section class="app-main">
         <router-link to="/setItem/index">emails</router-link>
-        <Transition name="fade-transform" mode="out-in">
-            <router-view></router-view>
-        </Transition>
+        <router-view></router-view>
     </section>
 </template>
 

@@ -5,8 +5,8 @@ import { Edit } from '@element-plus/icons-vue'
 
 <template>
     <div class="wrapper">
-        <p class="title">Admin</p>
-        <div class="control">
+    <p class="title">Admin</p>
+    <!-- <div class="control">
             <el-icon size="20px">
                 <Edit />
             </el-icon>
@@ -17,22 +17,25 @@ import { Edit } from '@element-plus/icons-vue'
         <div class="control">
             <el-icon size="20px">
                 <Edit />
-            </el-icon>
-            <span class="ctlTxt">
-                编辑
-            </span>
-        </div>
+                                            </el-icon>
+                                            <span class="ctlTxt">
+                                                编辑
+                                            </span>
+                                        </div> -->
+        <el-menu default-active="2" background-color="#304156" text-color="#bfcbd9" :unique-opened="false"
+            active-text-color="#409EFF" :collapse-transition="false" mode="vertical">
+            <el-menu-item index="1">
+                <span>Navigator One</span>
+            </el-menu-item>
+            <el-menu-item index="2">
+                <span>Navigator Two</span>
+            </el-menu-item>
+        </el-menu>
     </div>
 </template>
 
 <style lang="scss" scoped>
 .wrapper {
-    // float: right;
-    // height: 100vh;
-    // width: 200px;
-    // border: 1px solid red;
-    // overflow: hidden;
-
     .title {
         font-size: 45px;
         font-weight: bold;
