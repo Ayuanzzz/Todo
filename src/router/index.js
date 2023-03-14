@@ -5,8 +5,8 @@ import Layout from '@/layout/index.vue'
 export const constantRoutes = [
     {
         path: '/',
-        // redirect:'/home'
-        redirect: '/setItem'
+        redirect: '/home'
+        // redirect: '/setItem'
     },
     {
         path: '/home',
@@ -33,13 +33,6 @@ const router = createRouter({
     routes: constantRoutes
 })
 
-// 全局路由守卫
-router.beforeEach((to, from, next) => {
-    console.log(to, from)
-    // if (to.meta.title) {
-    //   document.title = `${to.meta.title}`;
-    // }
-    next()
-})
+
 
 export default router
