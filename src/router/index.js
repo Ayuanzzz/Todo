@@ -10,14 +10,17 @@ export const constantRoutes = [
     },
     {
         path: '/home',
+        name: 'home',
         component: () => import('@/views/Home/index.vue'),
     },
     {
         path: '/itemtable',
+        name: 'itemtable',
         component: () => import('@/views/itemTable/index.vue'),
     },
     {
         path: '/setItem',
+        name: 'setItem',
         component: Layout,
         children: [
             {
@@ -32,7 +35,6 @@ const router = createRouter({
     history: createWebHistory('/Todo/'),
     routes: constantRoutes
 })
-
 
 
 export default router

@@ -1,35 +1,25 @@
 <script setup>
 import { Edit } from '@element-plus/icons-vue'
-
+import { useRoutesStore } from '@/stores/permission'
+import { computed } from 'vue'
+import { useRoute } from 'vue-router'
+const activeMenu = computed(() => {
+    const route = useRoute()
+    return route.path
+})
+const permission_routes = useRoutesStore().routes
+console.log(permission_routes);
 
 </script>
 
 <template>
     <div class="wrapper">
-    <p class="title">Admin</p>
-    <!-- <div class="control">
-            <el-icon size="20px">
-                <Edit />
-            </el-icon>
-            <span class="ctlTxt">
-                编辑
-            </span>
-        </div>
-                <div class="control">
-                    <el-icon size="20px">
-                            <Edit />
-                                                        </el-icon>
-                                                        <span class="ctlTxt">
-                                                            编辑
-                                                        </span>
-                                                    </div> -->
-        <el-menu default-active="2" background-color="#304156" text-color="#bfcbd9" :unique-opened="false"
-            active-text-color="#409EFF" :collapse-transition="false" mode="vertical">
-            <el-menu-item index="1">
-                <span>Navigator One</span>
-            </el-menu-item>
-            <el-menu-item index="2">
-                <span>Navigator Two</span>
+        <p class="title">Admin</p>
+        <el-menu :default-active="activeMenu" background-color="#304156" text-color="#bfcbd9" :unique-opened="false"
+            active-text-color="#409EFF" :collapse-transition="false" mode="vertical" v-for="route in permission_routes"
+            :key="route.path">
+            <el-menu-item :index="route.path">
+                <span>{{ route.name }}</span>
             </el-menu-item>
         </el-menu>
     </div>
