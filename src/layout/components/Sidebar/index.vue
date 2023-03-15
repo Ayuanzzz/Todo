@@ -3,6 +3,7 @@ import { Edit } from '@element-plus/icons-vue'
 import { useRoutesStore } from '@/stores/permission'
 import { computed } from 'vue'
 import { useRoute } from 'vue-router'
+import AppLink from './Link.vue'
 const activeMenu = computed(() => {
     const route = useRoute()
     return route.path
@@ -18,10 +19,14 @@ console.log(permission_routes);
         <el-menu :default-active="activeMenu" background-color="#304156" text-color="#bfcbd9" :unique-opened="false"
             active-text-color="#409EFF" :collapse-transition="false" mode="vertical" v-for="route in permission_routes"
             :key="route.path">
-            <el-menu-item :index="route.path">
-                <span>{{ route.name }}</span>
-            </el-menu-item>
+            <AppLink :to="route.path">
+                <el-menu-item :index="route.path">
+                    <span>{{ route.name }}</span>
+                </el-menu-item>
+            </AppLink>
         </el-menu>
+
+
     </div>
 </template>
 
@@ -54,4 +59,5 @@ console.log(permission_routes);
     }
 }
 </style>
+
 
