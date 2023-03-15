@@ -7,6 +7,7 @@ import App from './App.vue'
 import router from './router'
 
 import '@/permission'
+import '@/styles/index.scss'
 
 import { setupProdMockServer } from '../mockProdServer';
 if (process.env.NODE_ENV === 'production') {
